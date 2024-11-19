@@ -5,7 +5,7 @@
 ![screenshot](screenshot/2.png)
 ![screenshot](screenshot/3.png)
 ![screenshot](screenshot/4.png)
-![screenshot](screenshot/5.png)
+
 
 # Admin Dashboard
 ![screenshot](screenshot/Admin_login.png)
