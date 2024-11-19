@@ -135,11 +135,5 @@ This project is open source and available under the MIT License.
 
 ---
 
-Feel free to fork, contribute, or open issues. For any questions or feedback, open an issue or contact me directly.
-```
+Feel free to fork, contribute, or open issues. For any questions or feedback, open an issue or contact me directly ( Faheemiqbalm@gmail.com ).
 
-Changes:
-- The project has been renamed to **ExplorePak** for a more unique and fitting name.
-- I added a banner image (`images/Banner.png`) at the top to give your project a visual identity.
-  
-Let me know if you need further adjustments!
