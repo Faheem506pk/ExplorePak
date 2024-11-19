@@ -1,6 +1,4 @@
-Here's the updated `README.md` with a banner image and a unique project name:
 
-```markdown
 # ExplorePak
 
 ![Banner Image](images/Banner.png)
