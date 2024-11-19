@@ -1,17 +1,5 @@
 <?php
-// Database configuration
-$servername = "localhost";
-$username = "root"; // Update this to your MySQL username
-$password = ""; // Update this to your MySQL password
-$dbname = "tour"; // Update this to your database name
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'db.php';
 
 // SQL query to fetch package data
 $sql = "SELECT name, description, CONCAT('Rs ', price_min, ' - Rs ', price_max) AS price, image FROM packages";

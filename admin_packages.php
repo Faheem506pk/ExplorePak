@@ -10,19 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 ?>
 <?php
 // Database configuration
-$servername = "localhost";
-$username = "root"; 
-$password = ""; 
-$dbname = "tour"; 
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include 'db.php';
 // SQL query to fetch package data
 $sql = "SELECT * FROM packages";
 $result = $conn->query($sql);
