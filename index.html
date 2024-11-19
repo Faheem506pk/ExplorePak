@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour & Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <!-- Iconscout Link  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo"><i class="fas fa-hiking"></i> travel.com</a>
+        <nav class="navbar">
+            <div id="nav-close" class="fas fa-times"></div>
+            <a href="#home">home</a>
+            <a href="#category">Adventures</a>
+            <a href="#packages">packages</a>
+            <a href="#contact">contact</a>
+        </nav>
+        <div class="icons">
+            <div id="menu-btn" class="fas fa-bars"></div> 
+            <div id="search-btn" class="fas fa-search"></div>
+          
+        </div>
+    </header>
+
+    <div class="search-form">
+        <div id="close-search" class="fas fa-times"></div>
+        <form action="">
+        <input type="search" name="" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </div>
+
+    <section class="home" id="home">
+   
+        <div class="wrapper">
+           
+                <div class="box" style="background: url(images/home1.jpg) no-repeat;">
+                <div class="content">
+                    <span>never stop</span>
+                    <h3>exploring</h3>
+                    <p>Travel.com offers best deals on Pakistan tour packages.</p>
+                    <a href="#category" class="btn">get started</a>
+                </div>
+                </div>  
+        </div>
+    </section>
+
+    <!-- Adventure section -->
+
+    <section class="category" id="category">
+
+        <h1 class="heading">Adventure Idea!</h1>
+    
+        <div class="box-container">
+    
+            <div class="box">
+                <img src="images/category-1.jpg" alt="BungeeJumpingImg">
+                <h3>bungee jump</h3>
+                <p>Bungee jumping is an activity that involves a person jumping from a great height while connected to a large elastic cord.</p>
+                <a href="https://en.wikipedia.org/wiki/Bungee_jumping" class="btn">read more</a>
+            </div>
+    
+            <div class="box">
+                <img src="images/category-2.jpg" alt="ZipLinesImg">
+                <h3>zip lines</h3>
+                <p>A zip-line, zip line, zip-wire, or flying fox is a pulley suspended on a cable, usually made of stainless steel, mounted on a slope.</p>
+                <a href="https://en.wikipedia.org/wiki/Zip_line" class="btn">read more</a>
+            </div>
+    
+            <div class="box">
+                <img src="images/category-3.jpg" alt="canoeingImg">
+                <h3>Canoeing</h3>
+                <p>Canoeing is an activity which involves paddling a canoe with a single-bladed paddle.</p>
+                <a href="https://en.wikipedia.org/wiki/Canoeing" class="btn">read more</a>
+            </div>
+    
+        </div>
+    
+    </section>
+
+
+    <section class="packages" id="packages">
+        <h1 class="heading">Popular Packages</h1>
+        <div class="box-container" id="packages-container">
+            <!-- Packages will be loaded here dynamically -->
+        </div>
+    </section>
+
+
+
+
+
+    
+
+
+    <section class="contact" id="contact">
+    
+    <div class="wrapper1">
+        <div class="title1">
+          <h1>Contact us</h1>
+        </div>
+        <div class="contact-form">
+            <form method="post" action="contact_us.php">
+                <div class="input-fields">
+                    <input type="text" class="input" id="name" placeholder="Name" name="name" required>
+                    <input type="email" class="input" id="email" placeholder="Email Address" name="email" pattern=".+@gmail\.com" required>
+                    <input type="tel" class="input" id="phone" placeholder="Phone" name="phone" required>
+                    <input type="text" class="input" id="subject" placeholder="Subject" name="subject" required>
+                </div>
+                <div class="msg">
+                    <textarea placeholder="Message" id="message" name="message" required></textarea> <br>
+                    <div class="btn1"><button type="submit">send <i class="uil uil-message"></i></button></div>
+                </div>
+            </form>
+            
+        </div>
+        </div> 
+    
+    </section>
+    <section class="footer">
+
+        <div class="box-container">
+    
+            <div class="box">
+                <h3>Quick links</h3>
+                <a href="#home">home</a>    
+                <a href="#packages">packages</a>
+                <a href="#query">query</a>
+            </div>
+    
+            <div class="box">
+                <h3>extra links</h3>
+                <a href="#contact">ask questions</a>
+                <a href="#">terms of use</a>
+                <a href="#">privacy policy</a>
+            </div>
+    
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="#"> <i class="fas fa-phone"></i> +92-123456789 </a>
+                <a href="#"> <i class="fas fa-envelope"></i> info@travel.com </a>
+                <a href="#"> <i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</a>
+            </div>
+    
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('get_packages.php')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('packages-container');
+                    container.innerHTML = data.map(package => `
+                        <div class="box">
+                            <div class="image">
+                                <img src="images/${package.image}" alt="${package.name}">
+                            </div>
+                            <div class="content">
+                                <h3>${package.name}</h3>
+                                <p>${package.description}</p>
+                                <div class="price">${package.price}</div>
+                                <a href="#contact" class="btn">Explore Now</a>
+                            </div>
+                        </div>
+                    `).join('');
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        });
+    </script>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
