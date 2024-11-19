@@ -135,5 +135,5 @@ This project is open source and available under the MIT License.
 
 ---
 
-Feel free to fork, contribute, or open issues. For any questions or feedback, open an issue or contact me directly ( Faheemiqbalm@gmail.com ).
+Feel free to fork, contribute, or open issues. For any questions or feedback, open an issue or contact me directly ( mailto:Faheemiqbalm@gmail.com ).
 
