@@ -13,7 +13,7 @@
 ![screenshot](screenshot/Admin_Packages.png)
 ![screenshot](screenshot/Admin_Contacts.png)
 
-**ExplorePak** is a web application designed to manage and display a variety of tour packages. This project allows admin users to manage packages, including details such as name, location, description, price range, and images. It also includes an admin login page to access the management panel ( Demo: http://explorepak.free.nf ).
+**ExplorePak** is a web application designed to manage and display a variety of tour packages. This project allows admin users to manage packages, including details such as name, location, description, price range, and images. It also includes an admin login page to access the management panel .
 
 ## Features
 
